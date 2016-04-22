@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamTrainBang.WebServiceSample">
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <Style TargetType="Label">
+        <Setter Property="HorizontalOptions"  Value="Center" />
+        <Setter Property="VerticalOptions"    Value="CenterAndExpand" />
+        <Setter Property="FontSize" Value="Small" />
+        <Setter Property="TextColor" Value="Blue" />
+      </Style>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+  <ContentPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness" iOS="0, 20, 0, 0" />
+  </ContentPage.Padding>
+  <ContentPage.Content>
+    <StackLayout>
+      <Label Text="{Binding status, StringFormat='Status : {0:F0} '}" />
+      <Label Text="{Binding num_results, StringFormat='No of Results : {0:F0} '}" />
+      <ListView x:Name="lstUsers" HasUnevenRows="false" Header="Header Value" Footer="Footer" >
+        <ListView.HeaderTemplate>
+          <DataTemplate>
+            <StackLayout Orientation="Horizontal" BackgroundColor="Blue" Padding="5,5,5,5">
+              <Label Text="Section" FontSize="Medium" FontAttributes="Bold" TextColor="White" />
+              <Label Text="Sub Section" FontSize="Medium" FontAttributes="Bold" TextColor="White"/>
+              <Label Text="Title" FontSize="Medium" FontAttributes="Bold" TextColor="White"/>
+              <Label Text="Abstract" FontSize="Medium" FontAttributes="Bold" TextColor="White"/>
+            </StackLayout>
+          </DataTemplate>
+        </ListView.HeaderTemplate>
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell>
+              <StackLayout Orientation="Horizontal" Padding="5,5,5,5">
+                <Label Text="{Binding section}" FontSize="Medium" />
+                <Label Text="{Binding subsection}" FontSize="Medium" />
+                <Label Text="{Binding title}" FontSize="Medium" />
+                <Label Text="{Binding @abstract}" FontSize="Medium" />
+              </StackLayout>
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+        <ListView.FooterTemplate>
+          <DataTemplate>
+            <StackLayout Orientation="Horizontal" Padding="5,5,5,5">
+            </StackLayout>
+          </DataTemplate>
+        </ListView.FooterTemplate>
+      </ListView>
+
+    </StackLayout>
+   </ContentPage.Content>
+</ContentPage>
