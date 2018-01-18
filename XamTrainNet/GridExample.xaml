@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamTrainBang.GridExample">
+  <ContentPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness"
+                    iOS="5, 20, 5, 0"
+                    Android="5, 0"
+                    WinPhone="5, 0" />
+  </ContentPage.Padding>
+  <ContentPage.Content>
+    <Grid>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="50" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="5" />
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="5" />
+      </Grid.ColumnDefinitions>
+      <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4"    Text="Grid Example Home"  HorizontalTextAlignment="Center" />
+      <Label Grid.Row="1" Grid.Column="1"  Text="1,0" HorizontalTextAlignment="Center"  />
+      <Entry Grid.Row="1" Grid.Column="2" />
+      <Label Grid.Row="2" Grid.Column="1"  Text="2,0"  HorizontalTextAlignment="Center"  />
+      <Label Grid.Row="2" Grid.Column="2"  Text="2,1"   HorizontalTextAlignment="Center"/>
+      <Label Grid.Row="3" Grid.Column="1"  Text="3,0"  HorizontalTextAlignment="Center" />
+      <Label Grid.Row="3" Grid.Column="2"  Text="3,1"  HorizontalTextAlignment="Center" />
+     </Grid>
+  </ContentPage.Content>
+  
+</ContentPage>
